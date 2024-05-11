@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>đăng ký học viên</title>
+</head>
+<body>
+<form>
+    <div style="width: 400px;background-color: #dcd7d7;height:400px;border: 2px solid #ada8a8">
+        <div style="background-color: cornflowerblue;height: 40px;margin-bottom: 15px;display: flex;justify-content: center;align-items: center;" >
+            <center>
+                <p style="color: aliceblue;font-size: 20px">Đăng ký học viên</p>
+            </center>
+        </div>
+        <label class="demo5" for="user1" >Họ và tên:</label>
+        <input required style="margin-left: 50px" id="user1" type="text" name="user" ><br>
+        <label class="demo5" for="user2" >Ngày sinh:</label>
+        <input required style="margin-left: 47px" id="user2" type="text" name="user" ><br>
+        <div style="display: flex">
+            <p class="demo5"> Giới tính: </p>
+            <label  style="margin-bottom: auto;margin-top: auto;margin-left: 10px" >Nam</label>
+            <input type="radio" checked name="n" value="nam">
+            <label  style="margin-top: auto;margin-bottom: auto" >Nữ</label>
+            <input type="radio" name="n" value="nu"><br>
+        </div>
+        <label class="demo5" for="user3" >Địa chỉ:</label>
+        <input required style="margin-left: 65px;height: 40px" id="user3" type="text" name="user" ><br><br>
+        <div>
+            <label class="demo5">Lớp:</label>
+<select>
+    <option>-chọn lớp-</option>
+    <option>1</option>
+    <option>2</option>
+    <option>3</option>
+</select>
+        </div><br>
+        <label class="demo5"  >Email:</label>
+        <input required style="margin-left: 74px"  type="email" name="email" ><br>
+        <label class="demo5"  >Số điện thoại:</label>
+        <input required style="margin-left: 28px" type="text" name="sdt" ><br><br>
+        <button style="margin-left: 100px;font-size: 15px">Đăng ký</button>
+        <button style="font-size: 15px">Nhập lại</button>
+        </div>
+    </form>
+</body>
+</html>

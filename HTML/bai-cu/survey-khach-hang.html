@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>form lấy survey khách hàng</title>
+    <style>
+        table{
+            border-collapse: collapse;
+        }
+    .demo1{
+    border: 1px solid #ada8a8;
+    }
+    </style>
+</head>
+<body>
+<h1>Market Research Survey</h1>
+<p>please take a few moments to complete this satisfaction survey</p><hr>
+<b>what is your age range?</b><br>
+<select style="width: 200px">
+    <option>12-18</option>
+    <option>18-24</option>
+    <option>24-30</option>
+</select><br><br>
+<b>what is your yearly income range?</b><br>
+<select style="width: 200px">
+    <option>$0-$25,000</option>
+</select><br><br>
+<b>Gender</b> <br>
+<input type="radio" name="n"> Male<br>
+<input type="radio" name="n"> Female<br><br>
+<b>which of the following products have purchased in the last 2 months, Please check all that apply.</b><br>
+<input type="radio" name="m"> Product 1<br>
+<input type="radio" name="m"> Product 2<br>
+<input type="radio" name="m"> Product 3 <br><br>
+<b>How often would you use our, new product?</b><br>
+<input type="radio" name="b"> Daily<br>
+<input type="radio" name="b"> Weekly<br>
+<input type="radio" name="b"> Monthly <br><br>
+<b>What would you pay for the new product?</b><br>
+$  <input type="text" style="width: 70px">.<input style="width: 30px" type="text">
+<div style="display: flex">
+<p style="margin-left: 10px">Dollars</p>
+<p style="margin-left: 33px">Cents</p><br>
+</div>
+<b>what would you like to see in the new product.</b><br>
+<input type="text" style="width: 800px;height: 100px"><br>
+<p>Please rate your level of agreement with the following statements.</p><br>
+<table class="demo1">
+    <tr class="demo1">
+        <td class="demo1" style="width: 300px;height: 50px">  </td>
+        <td class="demo1" style="width: 150px;height: 50px" >Strongly Disagree</td>
+        <td class="demo1" style="width: 110px;height: 50px">Disagree</td>
+        <td class="demo1" style="width: 110px;height: 50px">Agree</td>
+        <td class="demo1" style="width: 110px;height: 50px">Strongly Agree</td>
+    </tr>
+
+    <tr class="demo1">
+        <td class="demo1" style="width: 300px;height: 50px"> <b>Our products are priced fairly.</b> </td>
+        <td class="demo1" style="width: 150px;height: 50px" ><center><input type="radio"></center></td>
+        <td class="demo1" style="width: 110px;height: 50px"><center><input type="radio"></center></td>
+        <td class="demo1" style="width: 110px;height: 50px"><center><input type="radio"></center></td>
+        <td class="demo1" style="width: 110px;height: 50px"><center><input type="radio"></center></td>
+    </tr>
+
+    <tr class="demo1">
+        <td class="demo1" style="width: 300px;height: 50px"><b>Our products are high quality.</b> </td>
+        <td class="demo1" style="width: 150px;height: 50px" ><center><input type="radio"></center></td>
+        <td class="demo1" style="width: 110px;height: 50px"><center><input type="radio"></center></td>
+        <td class="demo1" style="width: 110px;height: 50px"><center><input type="radio"></center></td>
+        <td class="demo1" style="width: 110px;height: 50px"><center><input type="radio"></center></td>
+    </tr>
+
+    <tr class="demo1">
+        <td class="demo1" style="width: 300px;height: 50px"> <b>You would recommend our product to a friend or coworker.</b> </td>
+        <td class="demo1" style="width: 150px;height: 50px" ><center><input type="radio"></center></td>
+        <td class="demo1" style="width: 110px;height: 50px"><center><input type="radio"></center></td>
+        <td class="demo1" style="width: 110px;height: 50px"><center><input type="radio"></center></td>
+        <td class="demo1" style="width: 110px;height: 50px"><center><input type="radio"></center></td>
+    </tr>
+</table><br>
+<button style="font-size: 20px"><b>Submit</b></button>
+</body>
+</html>
