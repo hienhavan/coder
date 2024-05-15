@@ -1,10 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        @keyframes ex1 {
+            from{left: 50%;}
+            to {left:0%;}
+        }
+            @keyframes exx1 {
+                from {background: chartreuse;}
+                to {background: #ccc;}
+            }
+
+
+
+        @keyframes ex {
+            from {left:0%;background: #dcd7d7;}
+            to {left: 50%;background: chocolate;}
+
+        }
+       
+
+        @keyframes exx {
+            from {background: #ccc;}
+            to {background: chartreuse;}
+
+        }
+        .styy:checked:before {
+            animation: ex 0.8s forwards;
+        }
+        .styy:checked {
+animation: exx 1.3s forwards;
+            background-repeat: no-repeat;
+
+        }
+        .sty{
+            position: relative;
+           width: 80px;
+            height: 40px;
+            appearance: none;
+            background: #ccc;
+            outline: none;
+            border-radius: 20px;
+            box-shadow: inset 0 0 5px rgba(0,0,0,0.3);
+            animation: ex1 0.8s forwards;
+            animation: exx1 1s forwards;
+        }
+        /*.sty:checked{*/
+        /*    background:#345fff;*/
+        /*}*/
+       /*#a:checked{*/
+       /*    background: dodgerblue;*/
+       /*}*/
+       /*#b:checked{*/
+       /*    background:brown;*/
+       /*}*/
+       /*#c:checked{*/
+       /*    background: chartreuse;*/
+       /*}*/
+        .sty:before{
+            content: ' ';
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            position: absolute;
+            background: #dcd7d7;
+            border-radius: 50%;
+            transform: scale(1.13);
+            box-shadow: inset 0 0 3px ;
+            /*animation: ntt 0.5s forwards;*/
+        }
+        /*.sty:checked:before{*/
+        /*    left: 50%;*/
+        /*}*/
+        .span {
+            text-transform:uppercase;
+            position: fixed;
+            margin-top: 15px;
+            margin-left: 10px;
+            font-weight: bolder;
+        }
+    </style>
 </head>
 <body>
-$END$
+<div style="display: flex;flex-direction: column;justify-content: center;height: 100vh;position: fixed;left: 40%">
+<div style="padding-bottom: 30px">
+    <input value="a" id="a" class="sty styy" type="checkbox"> <span class="span">đẹp trai vãi ò</span>
+</div>
+    <div  style="padding-bottom: 30px">
+        <input value="b" id="b"  class="sty styy"  type="checkbox"> <span class="span">giàu vãi ò</span>
+    </div>
+    <div  style="padding-bottom: 30px">
+        <input value="c" id="c"  class="sty styy" type="checkbox"> <span class="span">thông minh vãi ò</span>
+    </div>
+</div>
+<script src="../js/good-fast-cheap.js" ></script>
 </body>
 </html>

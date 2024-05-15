@@ -1,10 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>chỉ số bmi</title>
 </head>
 <body>
-$END$
+<div >
+    <input value="" name="0" id="aa" placeholder="Chiều cao" style="font-size: 18.6px;height: 60px" class="m" type="number" required autocomplete="">
+    <input value="" name="1" id="bb" placeholder="Cân nặng" style="font-size: 18.6px;height: 60px" class="m" type="number" required autocomplete="">
+    <div style="display: grid;grid-template-columns: repeat(auto-fill,minmax(400px,1fr))">
+
+        <table id="soannut" style="border: 2px solid blue;margin-top:13px;font-size: 75px;width: 100%;color: #dcd7d7">
+            <tr style="border: 1px solid #dcd7d7;background-color: #ada8a8">
+                <td  class="abc" style="border: 1px solid black;font-size: 40px" colspan="3"><center style="color: black" >AC</center></td>
+            </tr>
+            <tr style="border: 1px solid #dcd7d7">
+                <td  class="abc"  style="border: 1px solid black" ><center>7</center></td>
+                <td  class="abc" style="border: 1px solid black"><center>8</center></td>
+                <td  class="abc" style="border: 1px solid black"><center>9</center></td>
+            </tr>
+
+            <!--        <table style="border: 1px solid black;margin-top: 10px;font-size: 60px">-->
+            <tr style="border: 1px solid #dcd7d7">
+                <td  class="abc" id="4" style="border: 1px solid black" ><center>4</center></td>
+                <td  class="abc" style="border: 1px solid black"><center>5</center></td>
+                <td  class="abc" style="border: 1px solid black"><center>6</center></td>
+            </tr>
+            <!--            <table style="border: 1px solid black;margin-top: 10px;font-size: 50px">-->
+            <tr style="border: 1px solid #dcd7d7">
+                <td class="abc" style="border: 1px solid black" ><center>1</center></td>
+                <td class="abc" style="border: 1px solid black"><center>2</center></td>
+                <td class="abc" style="border: 1px solid black"><center>3</center></td>
+            </tr>
+            <!--                <table style="border: 1px solid black;margin-top: 10px;font-size: 50px">-->
+            <tr style="border: 1px solid #dcd7d7">
+                <td class="abc" style="border: 1px solid black" ><center>0</center></td>
+                <td class="abc" style="border: 1px solid black"><center>.</center></td>
+                <td class="abc" style="border: 1px solid black;background-color: darkcyan;color: #dcd7d7"><center>=</center></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<p id="inramanhinh"></p>
+<h1 id="h1"></h1>
+<script src="../js/chi-so-BML.js"></script>
+
+
 </body>
 </html>
