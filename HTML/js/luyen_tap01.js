@@ -57,3 +57,8 @@ $('nut5').addEventListener('click', function () {
        alert( "hoc luc trung binh")
     }
 })
+var a = +prompt("nhap so tien");
+var b = +prompt("nhap so thang");
+
+alert(a*(1+0.1)**b)
+

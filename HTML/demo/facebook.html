@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Canva Clone</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            display: flex;
+            background-color: #f5f5f5;
+        }
+
+        .sidebar {
+            width: 250px;
+            background-color: #333;
+            color: white;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+        }
+
+        .user-info {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-bottom: 10px;
+        }
+
+        .user-name, .user-email {
+            margin: 0;
+            text-align: center;
+        }
+
+        .create-design-btn {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 20px 0;
+            width: 100%;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .menu {
+            list-style: none;
+            padding: 0;
+        }
+
+        .menu li {
+            margin: 10px 0;
+        }
+
+        .menu li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .menu li a:hover {
+            background-color: #555;
+        }
+
+        .help-section {
+            margin-top: 20px;
+        }
+
+        .help-section a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            margin: 5px 0;
+        }
+
+        .main-content {
+            flex-grow: 1;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .search-section {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-section h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .search-section input {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .recommended-section, .your-designs-section {
+            margin-bottom: 20px;
+        }
+
+        .templates {
+            display: flex;
+            gap: 10px;
+        }
+
+        .template {
+            background-color: #eee;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            flex: 1;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .template:hover {
+            background-color: #ddd;
+        }
+
+    </style>
+</head>
+<body>
+<div class="sidebar">
+    <div class="user-info">
+        <img src="user-avatar.png" alt="User Avatar" class="avatar">
+        <p class="user-name">Linh Chu Thùy</p>
+        <p class="user-email">chuthulylinh30...</p>
+    </div>
+    <button class="create-design-btn">Tạo thiết kế</button>
+    <ul class="menu">
+        <li><a href="#">Tất cả thiết kế của bạn</a></li>
+        <li><a href="#">Sử dụng Canva 1.0</a></li>
+        <li><a href="#">Đã chia sẻ với bạn</a></li>
+        <li><a href="#">Tạo nhóm</a></li>
+        <li><a href="#">Thương hiệu của bạn</a></li>
+        <li><a href="#">Khám phá các mẫu</a></li>
+        <li><a href="#">Thêm thư mục mới</a></li>
+        <li><a href="#">Nâng cấp</a></li>
+    </ul>
+    <div class="help-section">
+        <a href="#">Tìm hiểu cách thiết kế</a>
+        <a href="#">Có được cảm hứng thiết kế</a>
+    </div>
+</div>
+<div class="main-content">
+    <div class="search-section">
+        <h1>Bạn muốn thiết kế nội dung gì?</h1>
+        <input type="text" placeholder="Dùng thử 'Bài đăng Instagram'">
+    </div>
+    <div class="recommended-section">
+        <h2>Được đề xuất</h2>
+        <div class="templates">
+            <div class="template">Mạng xã hội</div>
+            <div class="template">Bản thuyết trình khổ rộng</div>
+            <div class="template">Áp phích</div>
+            <div class="template">Trang bìa Facebook</div>
+            <div class="template">Tờ rơi</div>
+        </div>
+    </div>
+    <div class="your-designs-section">
+        <h2>Thiết kế của bạn</h2>
+        <!-- Add your designs here -->
+    </div>
+</div>
+</body>
+</html>
