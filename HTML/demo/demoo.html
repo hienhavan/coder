@@ -17,10 +17,53 @@
         .facebook-button:hover {
             background-color: #28a745; /* Màu nền thay đổi khi hover */
         }
+        .hidden-content {
+            display: none;
+        }
+
+        .toggle-button:hover + .hidden-content {
+            display: block;
+        }
+        .effect-button:hover {
+            background-color: red;
+            color: white;
+        }
+        .image-effect:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+
+        .interactive-link:hover {
+            text-decoration: underline;
+            color: blue;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            transition: width 0.3s ease;
+        }
+
+        .box:hover {
+            width: 150px;
+        }
 
     </style>
 </head>
 <body>
+<div class="box"></div>
+
+<a class="interactive-link" href="https://stackoverflow.com/nocaptcha?s=3ac16b62-3500-4517-90c0-4562b367f6f7">Liên kết tương tác</a>
+
+<img class="image-effect" src="image.jpg">
+
+<button class="effect-button">Hover để thay đổi màu</button>
+
+<div class="container">
+    <button class="toggle-button">Hiện/Ẩn</button>
+    <div class="hidden-content">Nội dung ẩn</div>
+</div>
+
 <button id="login-with-facebook" class="facebook-button">Đăng nhập bằng Facebook</button>
 
 </body>

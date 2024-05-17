@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>caro</title>
+</head>
+<body>
+<h1>caro</h1>
+<p id="abc"> </p>
+<input type="button" id="nut" value="nhap">
+<script>
+var x = [];
+var tr = ' ';
+var luot = 1;
+for (var j = 0;j<3;j++) {
+    x[j] = []
+    for (var i = 0; i < 3; i++) {
+       x[j][i] = '(..)';
+    }
+}
+var abc = [...x];
+console.log(abc)
+for (var i = 0;i<3;i++) {
+    x[i] += '<br>'
+document.getElementById('abc').innerHTML = x.join(" ");
+}
+var ab = document.getElementById('nut');
+ab.addEventListener('click',function () {
+    var a =  +prompt("nhap dong");
+    var b =  +prompt("nhap cot");
+    if (luot % 2 == 0 ){
+        abc[a][b] = '(x)';
+    }else {
+        abc[a][b] = '(o)';
+    }
+    luot += 1;
+        tr = [...abc]
+        console.log(abc)
+        for (var i = 0; i < 3   ; i++) {
+            tr[i] += '<br>'
+            document.getElementById('abc').innerHTML = tr.join(" ");
+        }
+    for(let i=0; i<3; i++){
+        for (let j=0; j<3; j++){
+            if (abc[i][j] === '(x)' && abc[i][j+1] === '(x)' && abc[i][j+2] === '(x)' ||
+                abc[i][j] === '(x)' && abc[i+1][j] === '(x)' && abc[i+2][j] === '(x)'){
+                alert("x Thắng");
+                break ;
+
+            }else if(abc[i][j] === '(o)' && abc[i][j+1] === '(o)' && abc[i][j+2] === '(o)' ||
+                abc[i][j] === '(o)' && abc[i+1][j] === '(o)' && abc[i+2][j] === '(o)'){
+                alert("o Thắng");
+                break ;
+            }
+        }
+    }
+})
+
+</script>
+</body>
+</html>
