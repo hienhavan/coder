@@ -3,6 +3,7 @@ var $ = (id) => document.getElementById(id);// var annut = document.getElementsB
 var annut = document.getElementsByClassName("abc");
 for (var i = 0; i < annut.length; i++) {
     annut[i].addEventListener('click', function() {
+        console.log(i)
         var a = this.innerText;
        var b = parseInt(a);
         if(a == "AC"){

@@ -1,10 +1,107 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .x{
+            background: #28a745;
+            color: #dcd7d7;
+            border-radius:5px;
+            font-size: 20px;
+            border: 1px #dcd7d7;
+        }
+        table {
+            border-collapse: collapse;
+
+        }
+        .tb{
+            border: 1px solid #ada8a8;
+        }
+        .tbb {
+            width: 180px;
+            height: 50px;
+        }
+    </style>
 </head>
 <body>
-$END$
+<label for="nhap">
+<h1>Add New Product</h1></label>
+<div style="display: flex">
+<input type="text" placeholder="New Product" id="nhap">
+    <button id="add" class="x" style="margin-left: 10px">Add</button>
+</div>
+<p id="v" ></p>
+<script>
+    var $ = (id) => document.getElementById(id);
+    var ds = ["ip", "ss", "nokia", "xiaomi"];
+
+    function updata() {
+        var h = "";
+        for (var i = 0; i < ds.length; i++) {
+            h += '<tr class="tb tbb">'
+            h += '<td class="tb tbb">' + ds[i] + '</td>';
+            h += '<td class="tb"><button class="x" onclick="deleteProduct('+i+')"> xoa</button></td>';
+            h += '<td class="tb"><button class="x" onclick="edit('+i+')"> sua</button></td>';
+            h += '</tr>'
+        }
+        document.getElementById('v').innerHTML = '<table class="tb">' + h + '</table>';
+    }
+    updata();
+
+    function deleteProduct(index) {
+        if (confirm("Bạn có chắc chắn muốn xóa?")) {
+            ds.splice(index, 1);
+            updata();
+        }
+    }
+
+    function edit(index) {
+        var suaa = prompt("Nội dung cần sửa");
+        ds[index] = suaa;
+        updata();
+    }
+
+    $('add').addEventListener('click', function() {
+        var gt = $('nhap').value;
+        if (gt !== "") {
+            ds.push(gt);
+            updata();
+            $('nhap').value = "";
+        } else {
+            console.log("Không có giá trị");
+        }
+    });
+
+// confirm()
+  // var c = [1,2,4,15,2,21,4,5]
+  // var x = 0 ;
+  // var d = []
+  // dem = 1;
+  // for (var i = 0;i<c.length;i++){
+  //     if(x < c[i]){
+  //         x = c[i];
+  //         d[dem] = x;
+  //         dem ++;
+  //     }
+  // }
+  //
+  // console.log(d[d.length-1])
+//   function abc (a,b){
+//       if (a<b){
+//         var ab =   document.write("hahaha")
+//           // return document.write("hahaha")
+//           return ab;
+//
+//       }else {
+//           var sum = a+b
+//           return sum
+//       }
+//   }
+// var c = +prompt("so1")
+//   var d = +prompt("so2")
+//   var cd = abc(c,d)
+//   document.write(cd)
+</script>
 </body>
 </html>

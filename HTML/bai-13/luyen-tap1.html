@@ -1,10 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    var a = [1,23,4,21,5,6,12,2,7,9];
+    var b = [-2,-23,23,-34,2,-4,-11,2,7]
+    var dem = 0;
+    var demsa = 0;
+    var max = a[0];
+    var tong = 0;
+    var dn = [];
+    var c = +prompt("nhap vao so can tim");
+    for (var i = 0;i<a.length;i++){
+        if (a[i] >= 10){
+            dem +=1;
+        }
+        if (max < a[i]){
+            max = a[i]
+        }
+        tong += a[i];
+    }
+    if (a.indexOf(c) !== -1){
+        alert(c +" "+ "is in the array")
+        console.log(a.indexOf(c))
+    }
+    else {
+        alert(c + " "+ "is not in the array")
+    }
+    for (var j = a.length-1;j >= 0;j--){
+        dn.push(a[j]);
+
+    }
+    for (var k = 0;k<b.length;k++){
+        if (b[k] < 0){
+            demsa +=1;
+        }
+    }
+    var d = +prompt("so nguyen S")
+    for (var i = 0; i<a.length;i++){
+        if (a[i] == d){
+            a.splice(i,1);
+            break;
+        }
+    }
+    a.push(0);
+    var e = a.slice();
+    e.sort(function (a,b){
+        return b - a;
+    });
+    var f = [...a,...b]
+    document.write(dem + "<br>");
+    document.write(max+"<br>");
+    document.write(tong/dem+"<br>");
+    document.write(dn+"<br>");
+    document.write(demsa+"<br>");
+    document.write(a+'<br>');
+    document.write(e+"<br>")
+    document.write(f+"<br>")
+</script>
 </body>
 </html>

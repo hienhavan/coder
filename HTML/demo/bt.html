@@ -1,10 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
-$END$
+<script>
+    let sum = 0;
+  function findAvg (a){
+      for(var i = 0;i<a.length;i++){
+          sum += a[i];
+      }
+      let tb = sum/a.length
+      return tb
+  }
+  let ds = [5,2,6,2,9];
+    let diemtb = findAvg(ds)
+    document.write(diemtb+'<br>');
+
+
+    var index = +prompt("nhap vao vi tri")
+    var x = +prompt("nhap vao so nguyen x")
+    let b1 = []
+    function insertNumberToArray(b){
+        for (var j = 0;j<b.length;j++){
+            if (b[index] < 0 || index > b.length){
+                b1.push(b[j])
+            } else {
+                b[index] = x;
+                b1.push(b[j])
+            }
+        }
+        return b1;
+    }
+    let array = [1,2,4,3,134,-2,4]
+    let ht = insertNumberToArray(array)
+    document.write(ht+'<br>');
+
+
+    var sn  = +prompt("nhap vao so nguyen x")
+    let sum1 = 0;
+    function sumOfListPrime(x){
+        for (var a = 0;a<=x;a++){
+            sum1 +=a
+        }
+        return sum1;
+    }
+
+    console.log(sum1)
+    let ht3 = sumOfListPrime(sn)
+    document.write(ht3+'<br>')
+
+</script>
 </body>
 </html>

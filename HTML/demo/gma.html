@@ -1,10 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Đối Kháng</title>
+    <style>
+        canvas {
+            border: 1px solid black;
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
 </head>
 <body>
-$END$
+<canvas id="gameCanvas" width="800" height="400"></canvas>
+<script >
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+
+    const playerWidth = 50;
+    const playerHeight = 50;
+    const playerSpeed = 5;
+    const bulletSpeed = 7;
+
+    const player1Img = new Image();
+    player1Img.src = 'https://toigingiuvedep.vn/wp-content/uploads/2022/01/anh-meme-meo-ff-cam-sung-mp40-mang-xa-ngau-loi.jpg';
+
+    const player2Img = new Image();
+    player2Img.src = 'https://khoinguonsangtao.vn/wp-content/uploads/2023/02/hinh-anh-meo-ff-cam-sung.jpg';
+
+    const bulletImg = new Image();
+    bulletImg.src = 'https://img.tukuppt.com/ad_preview/00/36/22/LXgDzHK0en.jpg!/fw/260';
+
+    let player1 = {
+        x: 100,
+        y: canvas.height - playerHeight,
+        width: playerWidth,
+        height: playerHeight,
+        isAttacking: false,
+        bullets: []
+    };
+
+    let player2 = {
+        x: canvas.width - 100 - playerWidth,
+        y: canvas.height - playerHeight,
+        width: playerWidth,
+        height: playerHeight,
+        isAttacking: false,
+        bullets: []
+    };
+
+    let keys = {};
+
+    window.addEventListener('keydown', (e) => {
+        keys[e.code] = true;
+    });
+
+    window.addEventListener('keyup', (e) => {
+        keys[e.code] = false;
+    });
+
+    function update() {
+        // Player 1 controls
+        if (keys['KeyA']) {
+            player1.x -= playerSpeed;
+        }
+        if (keys['KeyD']) {
+            player1.x += playerSpeed;
+        }
+        if (keys['KeyW']) {
+            player1.isAttacking = true;
+        } else {
+            player1.isAttacking = false;
+        }
+        if (keys['KeyS']) {
+            player1.bullets.push({ x: player1.x + player1.width, y: player1.y + player1.height / 2 });
+        }
+
+        // Player 2 controls
+        if (keys['ArrowLeft']) {
+            player2.x -= playerSpeed;
+        }
+        if (keys['ArrowRight']) {
+            player2.x += playerSpeed;
+        }
+        if (keys['ArrowUp']) {
+            player2.isAttacking = true;
+        } else {
+            player2.isAttacking = false;
+        }
+        if (keys['ArrowDown']) {
+            player2.bullets.push({ x: player2.x, y: player2.y + player2.height / 2 });
+        }
+
+        // Prevent players from moving out of canvas
+        player1.x = Math.max(0, Math.min(canvas.width - playerWidth, player1.x));
+        player2.x = Math.max(0, Math.min(canvas.width - playerWidth, player2.x));
+
+        // Update bullets positions
+        player1.bullets = player1.bullets.filter(bullet => bullet.x < canvas.width);
+        player2.bullets = player2.bullets.filter(bullet => bullet.x > 0);
+
+        player1.bullets.forEach(bullet => bullet.x += bulletSpeed);
+        player2.bullets.forEach(bullet => bullet.x -= bulletSpeed);
+    }
+
+    function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Draw player 1
+        ctx.drawImage(player1Img, player1.x, player1.y, player1.width, player1.height);
+        if (player1.isAttacking) {
+            ctx.fillStyle = 'yellow';
+            ctx.fillRect(player1.x + player1.width, player1.y, 10, player1.height);
+        }
+
+        // Draw player 1 bullets
+        player1.bullets.forEach(bullet => {
+            ctx.drawImage(bulletImg, bullet.x, bullet.y, 10, 5);
+        });
+
+        // Draw player 2
+        ctx.drawImage(player2Img, player2.x, player2.y, player2.width, player2.height);
+        if (player2.isAttacking) {
+            ctx.fillStyle = 'yellow';
+            ctx.fillRect(player2.x - 10, player2.y, 10, player2.height);
+        }
+
+        // Draw player 2 bullets
+        player2.bullets.forEach(bullet => {
+            ctx.drawImage(bulletImg, bullet.x, bullet.y, 10, 5);
+        });
+    }
+
+    function gameLoop() {
+        update();
+        draw();
+        requestAnimationFrame(gameLoop);
+    }
+
+    gameLoop();
+
+
+</script>
 </body>
 </html>
