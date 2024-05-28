@@ -28,13 +28,13 @@ window.addEventListener('load', function () {
                     this.keys.push(e.key);
                 }
                 // xu ly khi an enter tro choi bat dau lai
-                else if (e.key === 'Enter' && gameOver) restartGane();
+                else if (e.key === 'Enter' && gameOver){restartGane()}
+                if (input.keys === ' ') {
+                    Player.shootTop();
+                }
                 // console.log(e.key, this.keys);
                 if (e.key === 'u'){
                         switchCharacter();
-                    if (input.keys === ' ') {
-                           Player.shootTop();
-                    }
                 }
             });
             window.addEventListener('keyup', e => {
